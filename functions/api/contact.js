@@ -37,7 +37,7 @@ export async function onRequestPost(context) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "forms@ioangikwong.dev",
+        from: env.FROM_EMAIL || "onboarding@resend.dev",
         to: "ioan@ioangikwong.dev",
         reply_to: courriel,
         subject: `Nouveau message de ${nom}`,
