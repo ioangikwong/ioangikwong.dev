@@ -1,0 +1,22 @@
+# Ioan Gi-Kwong — Développeur Web
+
+> Développeur web freelance basé à Cowansville, QC. Sites web sur mesure, rapides et optimisés pour les PME du Québec.
+
+## Services
+- Site web sur mesure (Next.js, responsive, SEO)
+- Hébergement et maintenance (Cloudflare, SSL, support)
+
+## Prix
+- Site web sur mesure : à partir de 1 000 $
+- Hébergement annuel : 200 $ / année
+
+## Processus
+1. On se parle (gratuit, sans engagement)
+2. Estimation et dépôt (50%)
+3. Développement (avec retours en cours de route)
+4. Livraison (solde de 50%)
+
+## Contact
+- Courriel : ioan@ioangikwong.dev
+- Localisation : Cowansville, QC
+- Site : https://ioangikwong.dev

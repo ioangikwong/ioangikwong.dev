@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ioangikwong.dev/sitemap.xml
