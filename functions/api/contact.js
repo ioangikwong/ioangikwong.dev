@@ -40,7 +40,7 @@ export async function onRequestPost(context) {
         from: env.FROM_EMAIL || "onboarding@resend.dev",
         to: "ioan@ioangikwong.dev",
         reply_to: courriel,
-        subject: `Nouveau message de ${nom}`,
+        subject: `Nouveau message de ${nom} — ${new Date().toLocaleString("fr-CA", { timeZone: "America/Toronto" })}`,
         text: [`Nom: ${nom}`, `Courriel: ${courriel}`, "", message].join("\n"),
       }),
     });
