@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev)",
+      "WebFetch(domain:plantationbernier.com)",
+      "Bash(npx playwright install chromium)",
+      "Bash(node -e \":*)",
+      "Bash(sips -g pixelWidth -g pixelHeight -g format \"/Users/ioangikwong/Desktop/ioangikwong.dev/preview/public/plantation-bernier.png\")",
+      "Bash(curl -L -o \"/Users/ioangikwong/Desktop/ioangikwong.dev/preview/public/popup-bg.jpg\" \"https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80&auto=format&fit=crop\")",
+      "Bash(curl -L -s -o \"/Users/ioangikwong/Desktop/ioangikwong.dev/preview/public/popup-bg.jpg\" \"https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80&auto=format&fit=crop\" -H \"User-Agent: Mozilla/5.0\")",
+      "WebFetch(domain:unsplash.com)",
+      "Bash(curl -sL \"https://unsplash.com/photos/tHDtvXILMmY\" -H \"User-Agent: Mozilla/5.0\")",
+      "Bash(git add .gitignore index.html mockup.jsx package.json vite.config.js eslint.config.js src/ public/ functions/ footer-gradient.webp)",
+      "Bash(git add -u .)",
+      "Bash(git commit:*)",
+      "Bash(git push origin main)",
+      "Bash(gh repo create ioangikwong/ioangikwong.dev --public --source=. --remote=origin --push)",
+      "Bash(git fsck --full)",
+      "Bash(git gc --prune=now)",
+      "Bash(git add -f functions/api/contact.js)",
+      "Bash(git remote add origin https://github.com/ioangikwong/ioangikwong.dev.git)",
+      "Bash(git push -u origin main)",
+      "Bash(npm run build)",
+      "Bash(git add -A)"
+    ]
+  }
+}
