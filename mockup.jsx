@@ -1295,10 +1295,15 @@ function Contact() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      if (!res.ok) throw new Error();
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        console.error("Contact form error:", res.status, data);
+        throw new Error(data.error || res.statusText);
+      }
       setStatus("sent");
       setForm({ nom: "", courriel: "", message: "" });
-    } catch {
+    } catch (err) {
+      console.error("Contact form error:", err);
       setStatus("error");
     }
   };
@@ -1678,9 +1683,14 @@ function PopupMaquette({ externalOpen }) {
           message: `Demande de maquette gratuite\nDomaine à refaire: ${form.domaine}`,
         }),
       });
-      if (!res.ok) throw new Error();
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        console.error("Popup form error:", res.status, data);
+        throw new Error(data.error || res.statusText);
+      }
       setStatus("sent");
-    } catch {
+    } catch (err) {
+      console.error("Popup form error:", err);
       setStatus("error");
     }
   };

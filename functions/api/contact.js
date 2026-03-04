@@ -1,10 +1,32 @@
+const JSON_HEADERS = { "Content-Type": "application/json" };
+
 export async function onRequestPost(context) {
   const { request, env } = context;
 
-  const { nom, courriel, message } = await request.json();
+  if (!env.RESEND_API_KEY) {
+    return new Response(
+      JSON.stringify({ error: "RESEND_API_KEY not configured" }),
+      { status: 500, headers: JSON_HEADERS }
+    );
+  }
+
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return new Response(
+      JSON.stringify({ error: "Invalid JSON" }),
+      { status: 400, headers: JSON_HEADERS }
+    );
+  }
+
+  const { nom, courriel, message } = body;
 
   if (!nom || !courriel || !message) {
-    return Response.json({ error: "Missing fields" }, { status: 400 });
+    return new Response(
+      JSON.stringify({ error: "Missing fields" }),
+      { status: 400, headers: JSON_HEADERS }
+    );
   }
 
   try {
@@ -26,12 +48,21 @@ export async function onRequestPost(context) {
     if (!res.ok) {
       const err = await res.text();
       console.error("Resend error:", err);
-      return Response.json({ error: "Failed to send" }, { status: 500 });
+      return new Response(
+        JSON.stringify({ error: `Resend: ${err}` }),
+        { status: 500, headers: JSON_HEADERS }
+      );
     }
 
-    return Response.json({ success: true });
+    return new Response(
+      JSON.stringify({ success: true }),
+      { status: 200, headers: JSON_HEADERS }
+    );
   } catch (error) {
     console.error("Resend error:", error);
-    return Response.json({ error: "Failed to send" }, { status: 500 });
+    return new Response(
+      JSON.stringify({ error: error.message }),
+      { status: 500, headers: JSON_HEADERS }
+    );
   }
 }
