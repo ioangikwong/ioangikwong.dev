@@ -143,15 +143,31 @@ export function Footer() {
             gap: 12,
           }}
         >
-          <p
-            style={{
-              fontFamily: theme.fonts.body,
-              fontSize: 12,
-              color: theme.palette.grey[300],
-            }}
-          >
-            © 2026 Ioan Gi-Kwong
-          </p>
+          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            <p
+              style={{
+                fontFamily: theme.fonts.body,
+                fontSize: 12,
+                color: theme.palette.grey[300],
+              }}
+            >
+              © 2026 Ioan Gi-Kwong
+            </p>
+            <a
+              href="/confidentialite"
+              style={{
+                fontFamily: theme.fonts.body,
+                fontSize: 12,
+                color: theme.palette.grey[300],
+                textDecoration: "none",
+                transition: theme.transition.default,
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = theme.palette.grey[500])}
+              onMouseLeave={(e) => (e.currentTarget.style.color = theme.palette.grey[300])}
+            >
+              Confidentialit&eacute;
+            </a>
+          </div>
           <p
             style={{
               fontFamily: theme.fonts.body,
