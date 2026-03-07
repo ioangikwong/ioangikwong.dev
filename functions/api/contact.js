@@ -1,4 +1,6 @@
 const JSON_HEADERS = { "Content-Type": "application/json" };
+const MAX_BODY = 8_000;
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function onRequestPost(context) {
   const { request, env } = context;
@@ -7,6 +9,14 @@ export async function onRequestPost(context) {
     return new Response(
       JSON.stringify({ error: "RESEND_API_KEY not configured" }),
       { status: 500, headers: JSON_HEADERS }
+    );
+  }
+
+  const contentLength = parseInt(request.headers.get("content-length") || "0", 10);
+  if (contentLength > MAX_BODY) {
+    return new Response(
+      JSON.stringify({ error: "Payload too large" }),
+      { status: 413, headers: JSON_HEADERS }
     );
   }
 
@@ -20,11 +30,20 @@ export async function onRequestPost(context) {
     );
   }
 
-  const { nom, courriel, message } = body;
+  const nom = typeof body.nom === "string" ? body.nom.trim().slice(0, 200) : "";
+  const courriel = typeof body.courriel === "string" ? body.courriel.trim().slice(0, 320) : "";
+  const message = typeof body.message === "string" ? body.message.trim().slice(0, 5000) : "";
 
   if (!nom || !courriel || !message) {
     return new Response(
       JSON.stringify({ error: "Missing fields" }),
+      { status: 400, headers: JSON_HEADERS }
+    );
+  }
+
+  if (!EMAIL_RE.test(courriel)) {
+    return new Response(
+      JSON.stringify({ error: "Invalid email" }),
       { status: 400, headers: JSON_HEADERS }
     );
   }
