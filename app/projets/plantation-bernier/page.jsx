@@ -32,7 +32,7 @@ export default function PlantationBernier() {
           }}
         >
           <a href="/" style={{ display: "flex", alignItems: "center" }}>
-            <img src="/logo.svg" alt="Ioan Gi-Kwong" style={{ height: 28 }} />
+            <img src="/logo-white.svg" alt="Ioan Gi-Kwong" style={{ height: 28 }} />
           </a>
           <a
             href="/"
@@ -138,7 +138,7 @@ export default function PlantationBernier() {
                 ans.
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                {["Next.js", "Bilingue", "Responsive", "Cloudflare Pages"].map(
+                {["Astro", "Bilingue", "Responsive", "Cloudflare Pages"].map(
                   (tag) => (
                     <span
                       key={tag}
@@ -364,37 +364,8 @@ export default function PlantationBernier() {
               </p>
             </FadeIn>
 
-            {/* Mobile screenshot */}
-            <FadeIn delay={0.2}>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  marginBottom: 48,
-                }}
-              >
-                <div
-                  style={{
-                    border: `1px solid ${theme.palette.grey[200]}`,
-                    borderRadius: theme.radii.lg,
-                    overflow: "hidden",
-                    maxWidth: 320,
-                  }}
-                >
-                  <img
-                    src="/plantation-bernier-mobile.png"
-                    alt="Plantation Bernier — version mobile"
-                    style={{
-                      width: "100%",
-                      display: "block",
-                    }}
-                  />
-                </div>
-              </div>
-            </FadeIn>
-
             {/* CTA */}
-            <FadeIn delay={0.25}>
+            <FadeIn delay={0.2}>
               <div
                 style={{
                   display: "flex",

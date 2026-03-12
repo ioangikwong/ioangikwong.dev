@@ -29,7 +29,7 @@ export function Footer() {
         >
           <div>
             <a href="#" style={{ display: "inline-flex", alignItems: "center" }}>
-              <img src="/logo.svg" alt="Ioan Gi-Kwong" style={{ height: 28 }} />
+              <img src="/logo-white.svg" alt="Ioan Gi-Kwong" style={{ height: 28 }} />
             </a>
             <p
               style={{

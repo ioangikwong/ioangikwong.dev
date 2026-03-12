@@ -4,7 +4,7 @@ import { theme } from "./theme";
 import { Button } from "./Button";
 import { Icons } from "./Icons";
 
-export function Nav({ onOpenPopup }) {
+export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -50,7 +50,7 @@ export function Nav({ onOpenPopup }) {
           }}
         >
           <a href="#" style={{ display: "flex", alignItems: "center" }}>
-            <img src="/logo.svg" alt="Ioan Gi-Kwong" style={{ height: 28 }} />
+            <img src="/logo-white.svg" alt="Ioan Gi-Kwong" style={{ height: 28 }} />
           </a>
 
           {/* Desktop links */}
@@ -85,8 +85,8 @@ export function Nav({ onOpenPopup }) {
                 {l.label}
               </a>
             ))}
-            <Button size="small" style={{ cursor: "pointer" }} href={undefined} onClick={onOpenPopup}>
-              Offre gratuite
+            <Button size="small" href="#contact">
+              Contact
             </Button>
           </div>
 
