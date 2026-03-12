@@ -24,9 +24,7 @@ export function Realisations() {
 
         <FadeIn delay={0.15}>
           <a
-            href="https://plantationbernier.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/projets/plantation-bernier"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             style={{
@@ -130,7 +128,7 @@ export function Realisations() {
                   color: theme.palette.black,
                 }}
               >
-                Voir le site
+                Lire l'étude de cas
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M7 17L17 7M17 7H7M17 7v10" />
                 </svg>
