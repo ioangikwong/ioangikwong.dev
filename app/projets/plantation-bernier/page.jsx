@@ -134,7 +134,7 @@ export default function PlantationBernier() {
                 }}
               >
                 Refonte complète du site web pour un producteur de sapins de
-                Noël et d'épinettes à Lac-Brome, en activité depuis plus de 35
+                Noël et d'épinettes au Lac-Brome, en activité depuis plus de 35
                 ans.
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
@@ -263,7 +263,7 @@ export default function PlantationBernier() {
                   marginBottom: 24,
                 }}
               >
-                Plantation Bernier est une entreprise familiale de Lac-Brome
+                Plantation Bernier est une entreprise familiale du Lac-Brome
                 spécialisée dans la production de sapins de Noël et d'épinettes
                 pour la transplantation. Avec plus de 35 ans d'expérience,
                 l'entreprise avait besoin d'un site web moderne pour remplacer
